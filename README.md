@@ -116,7 +116,7 @@ The final flow should look like this
 
 Once executed, Livy will show the execution output
 
-![LivyExec](https://raw.githubusercontent.com/muharandy/CDF-ETL/master/images/FinalFlow.png)
+![LivyExec](https://raw.githubusercontent.com/muharandy/CDF-ETL/master/images/LivyExec.png)
 
 
 
