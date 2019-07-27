@@ -66,15 +66,15 @@ FIELDS TERMINATED BY ',';
 
 Use QueryDatabaseTable with Maximum-value column set to order_date. 
 
-!(http://url/to/img.png)
+![QueryDatabaseTable](https://raw.githubusercontent.com/muharandy/CDF-ETL/master/images/QueryDatabaseTable.png)
 
 Use ConvertRecord with AvroReader and CSVRecordSetWriter controller service. Make sure the date, time, and timestamp format are properly set
 
-![alt text](http://url/to/img.png)
+![CSVRecordSetWriter](https://raw.githubusercontent.com/muharandy/CDF-ETL/master/images/CSVRecordSetWriter.png)
 
 Link with PutHDFS
 
-![alt text](http://url/to/img.png)
+![PutHDFS](https://raw.githubusercontent.com/muharandy/CDF-ETL/master/images/PutHDFS.png)
 
 ## Develop Transformation Logic with CDSW
 
@@ -108,15 +108,15 @@ result.toPandas()
 
 Link the PutHDFS with ExecuteSparkInteractive
 
-![alt text](http://url/to/img.png)
+![ExecuteSparkInteractive](https://raw.githubusercontent.com/muharandy/CDF-ETL/master/images/ExecuteSparkInteractive.png)
 
 The final flow should look like this
 
-![alt text](http://url/to/img.png)
+![FinalFlow](https://raw.githubusercontent.com/muharandy/CDF-ETL/master/images/FinalFlow.png)
 
 Once executed, Livy will show the execution output
 
-![alt text](http://url/to/img.png)
+![LivyExec](https://raw.githubusercontent.com/muharandy/CDF-ETL/master/images/FinalFlow.png)
 
 
 
