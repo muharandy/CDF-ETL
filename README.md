@@ -66,7 +66,7 @@ FIELDS TERMINATED BY ',';
 
 Use QueryDatabaseTable with Maximum-value column set to order_date. 
 
-![alt text](http://url/to/img.png)
+!(http://url/to/img.png)
 
 Use ConvertRecord with AvroReader and CSVRecordSetWriter controller service. Make sure the date, time, and timestamp format are properly set
 
@@ -80,7 +80,7 @@ Link with PutHDFS
 
 Create a transformation script using Pyspark
 
-![alt text](http://url/to/img.png)
+!(https://raw.githubusercontent.com/muharandy/CDF-ETL/master/images/CDSWExploration.png)
 
 ```
 from pyspark.sql import SparkSession
