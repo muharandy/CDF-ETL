@@ -66,4 +66,57 @@ FIELDS TERMINATED BY ',';
 
 Use QueryDatabaseTable with Maximum-value column set to order_date. 
 
+![alt text](http://url/to/img.png)
+
+Use ConvertRecord with AvroReader and CSVRecordSetWriter controller service. Make sure the date, time, and timestamp format are properly set
+
+![alt text](http://url/to/img.png)
+
+Link with PutHDFS
+
+![alt text](http://url/to/img.png)
+
+## Develop Transformation Logic with CDSW
+
+Create a transformation script using Pyspark
+
+![alt text](http://url/to/img.png)
+
+```
+from pyspark.sql import SparkSession
+
+spark = SparkSession.builder.getOrCreate()
+result = spark.sql(
+  """
+  SELECT
+    closed_orders.order_customer_id
+    , count(closed_orders.order_customer_id) as num_orders
+  FROM (
+    SELECT * 
+    FROM staging.orders 
+    WHERE order_status = 'CLOSED'
+  ) closed_orders
+  GROUP BY closed_orders.order_customer_id
+  ORDER BY num_orders DESC
+  LIMIT 10
+  """
+)
+
+result.toPandas()
+```
+## Operationalise Transformation With NiFi
+
+Link the PutHDFS with ExecuteSparkInteractive
+
+![alt text](http://url/to/img.png)
+
+The final flow should look like this
+
+![alt text](http://url/to/img.png)
+
+Once executed, Livy will show the execution output
+
+![alt text](http://url/to/img.png)
+
+
 
