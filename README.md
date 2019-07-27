@@ -80,7 +80,7 @@ Link with PutHDFS
 
 Create a transformation script using Pyspark
 
-!(https://raw.githubusercontent.com/muharandy/CDF-ETL/master/images/CDSWExploration.png)
+![CDSW](https://raw.githubusercontent.com/muharandy/CDF-ETL/master/images/CDSWExploration.png)
 
 ```
 from pyspark.sql import SparkSession
