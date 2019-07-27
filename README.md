@@ -7,6 +7,8 @@ Exploring NiFi for Batch ETL. Summary
 - Data Profiling and Exploration with CDSW
 - Data transformation or aggregation using PySpark invoked via ExecuteSparkInteractive through Livy
 
+We will be using retail_db sample from Mysql installation.
+
 ## Install CDH + CDF + CDSW
 
 Install using Fabio's OneNodeCDHCluster:
@@ -39,3 +41,29 @@ Start Livy
 ```
 ./$LIVY_HOME/bin/livy-server start
 ```
+
+## Create Staging Table
+
+Login to Hue. Use Hive editor, create staging database
+```
+CREATE DATABASE staging;
+```
+
+Create staging table for orders data
+```
+USE staging;
+CREATE TABLE orders (
+    order_id INT
+    , order_date TIMESTAMP
+    , order_customer_id INT
+    , order_status VARCHAR(50)
+)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ',';
+```
+
+## Load Data Using NiFi
+
+Use QueryDatabaseTable with Maximum-value column set to order_date. 
+
+
